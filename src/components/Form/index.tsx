@@ -5,16 +5,22 @@ import { useTrack } from "../../hooks/useTrack";
 import { useAuth } from "../../hooks/useAuth";
 import toast from "react-hot-toast";
 import { createPlaylist } from "../../util/spotifyServices";
+import { useAppDispatch } from "../../store/hooks";
+import { storeTrack, selectTrack } from "../../store/trackSlice";
+
+import DataDummy from "../../constants/dataDummy";
 
 const Index = () => {
   const {
     handleSubmit,
     getValues,
     register,
-    formState: { errors }
+    formState: { errors },
+    reset
   } = useForm();
   const { selected } = useTrack();
   const { user, token } = useAuth();
+  const dispatch = useAppDispatch();
 
   const onSubmit = () => {
     const title = getValues("title");
@@ -23,6 +29,9 @@ const Index = () => {
       createPlaylist(title, desc, user, token, selected).then(() =>
         toast.success("You made it (UwU)")
       );
+      dispatch(storeTrack(DataDummy));
+      dispatch(selectTrack([]));
+      reset();
     } else {
       toast.error("Pwease atweast choose one song");
     }

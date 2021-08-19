@@ -8,7 +8,7 @@ import { storeTrack } from "../../store/trackSlice";
 import { useForm } from "react-hook-form";
 
 const Index: React.FC = () => {
-  const { register, handleSubmit, getValues } = useForm();
+  const { register, handleSubmit, getValues, reset } = useForm();
   const { token } = useAuth();
   const { getTrackData, filterData, selected } = useTrack();
   const dispatch = useAppDispatch();
@@ -21,6 +21,7 @@ const Index: React.FC = () => {
           ? dispatch(storeTrack(filterData(res.tracks.items, selected)))
           : dispatch(storeTrack(res.tracks.items))
       );
+      reset();
     } else {
       toast.error("Pwease atweast input 3 letter!");
     }
