@@ -57,6 +57,12 @@ const useTrack = () => {
     }
   };
 
+  const filterData = (data: any, TrackSelected: SpotifyApi.TrackObjectFull[]) => {
+    const tracks: SpotifyApi.TrackObjectFull[] = [...TrackSelected.map((T: SpotifyApi.TrackObjectFull) => Object.assign({}, T)), ...data];
+    const filter = [...new Map(tracks.map((t) => [t.uri, t])).values()];
+    return filter;
+  };
+
   return {
     track,
     selected,
@@ -66,7 +72,8 @@ const useTrack = () => {
     getNewReleased,
     getRecommend,
     getRecently,
-    getTrackData
+    getTrackData,
+    filterData
   };
 };
 

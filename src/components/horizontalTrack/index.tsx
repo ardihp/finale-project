@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Grid, Flex, Text, Button, Skeleton } from "@chakra-ui/react";
+import { useTrack } from "../../hooks/useTrack";
+import { selectTrack, deselectTrack } from "../../store/trackSlice";
+import { useAppDispatch } from "../../store/hooks";
 
 import Track from "./track";
 
@@ -12,6 +15,8 @@ interface Props {
 
 const Index: React.FC<Props> = ({ data, no, select, header }) => {
   const [isLoading, setLoading] = useState(true);
+  const { selected } = useTrack();
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
     if (data) {
@@ -19,10 +24,22 @@ const Index: React.FC<Props> = ({ data, no, select, header }) => {
     }
   }, [data]);
 
+  const handleSelect = (data: any) => {
+    dispatch(selectTrack([data, ...selected]));
+  };
+
+  const handleDeselect = (data: any) => {
+    dispatch(
+      deselectTrack(
+        selected.filter((s: SpotifyApi.TrackObjectFull) => s.uri !== data.uri)
+      )
+    );
+  };
+
   return (
     <Skeleton isLoaded={!isLoading}>
       <Grid
-        templateColumns="6% 90% 4%"
+        templateColumns="6% 86% 8%"
         border="2px solid #F4EEFF"
         borderRadius="lg"
         p={2}
@@ -58,13 +75,16 @@ const Index: React.FC<Props> = ({ data, no, select, header }) => {
             />
           )}
         </Flex>
-        <Flex alignItems="center">
+        <Flex alignItems="center" justifyContent="center">
           {select === false && (
             <Button
               textAlign="center"
               color="#A6B1E1"
               fontSize="12px"
-              p={0}
+              fontWeight="600"
+              py={2}
+              px={3}
+              fontFamily="Poppins"
               size="sm"
               background="#F4EEFF"
               onClick={() =>
@@ -76,22 +96,43 @@ const Index: React.FC<Props> = ({ data, no, select, header }) => {
                 )
               }
             >
-              <i className="fas fa-play"></i>
+              Play
             </Button>
           )}
-          {select === true && (
-            <Button
-              textAlign="center"
-              color="#A6B1E1"
-              fontSize="12px"
-              p={0}
-              size="sm"
-              background="#F4EEFF"
-              onClick={() => alert("select")}
-            >
-              <i className="fas fa-plus"></i>
-            </Button>
-          )}
+          {select === true &&
+            (selected.find(
+              (s: SpotifyApi.TrackObjectFull) => s.uri === data.uri
+            ) ? (
+              <Button
+                textAlign="center"
+                color="#A6B1E1"
+                fontSize="12px"
+                fontWeight="600"
+                py={2}
+                px={3}
+                fontFamily="Poppins"
+                size="sm"
+                background="#F4EEFF"
+                onClick={() => handleDeselect(data)}
+              >
+                Deselect
+              </Button>
+            ) : (
+              <Button
+                textAlign="center"
+                color="#A6B1E1"
+                fontSize="12px"
+                fontWeight="600"
+                py={2}
+                px={3}
+                fontFamily="Poppins"
+                size="sm"
+                background="#F4EEFF"
+                onClick={() => handleSelect(data)}
+              >
+                Select
+              </Button>
+            ))}
         </Flex>
       </Grid>
     </Skeleton>

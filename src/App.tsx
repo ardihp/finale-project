@@ -20,8 +20,7 @@ const App: React.FC = () => {
       <Router>
         <Switch>
           <Route path="/home">
-            {/* {isAuthenticated ? <Auth /> : <Redirect to="/" />} */}
-            <Auth />
+            {isAuthenticated ? <Auth /> : <Redirect to="/" />}
           </Route>
           <Route path="/discover">
             {isAuthenticated ? <Auth /> : <Redirect to="/" />}
@@ -30,8 +29,7 @@ const App: React.FC = () => {
             {isAuthenticated ? <Auth /> : <Redirect to="/" />}
           </Route>
           <Route path="/liked-songs">
-            {/* {isAuthenticated ? <Auth /> : <Redirect to="/" />} */}
-            <Auth />
+            {isAuthenticated ? <Auth /> : <Redirect to="/" />}
           </Route>
           <Route path="/">
             <Landing />
