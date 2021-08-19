@@ -53,7 +53,7 @@ To run this project, you will need to add the following environment variables to
 
 You also need to change the `$Redirect_URI` on useAuth file
 
-  $Redirect_URI = "localhost:3000"
+    $Redirect_URI = "localhost:3000"
 
   
 ## Run Locally
