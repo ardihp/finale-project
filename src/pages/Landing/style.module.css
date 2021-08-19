@@ -1,0 +1,22 @@
+.float {
+  animation: music 3s infinite;
+}
+
+@keyframes music {
+  0% {
+    position: relative;
+    top: 10px;
+  }
+  50% {
+    position: relative;
+    top: 0px;
+  }
+  100% {
+    position: relative;
+    top: 10px;
+  }
+}
+
+.price {
+  color: #A6B1E1;
+}

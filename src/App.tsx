@@ -1,26 +1,46 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  Redirect
+} from "react-router-dom";
+import { Container } from "@chakra-ui/react";
+import { useAuth } from "./hooks/useAuth";
+import { Toaster } from "react-hot-toast";
 
-function App() {
+import Landing from "./pages/Landing/";
+import Auth from "./pages/Auth";
+
+const App: React.FC = () => {
+  const { isAuthenticated } = useAuth();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container maxW="container.2xl" p={0} background="#FDFCFF" m={0}>
+      <Router>
+        <Switch>
+          <Route path="/home">
+            {/* {isAuthenticated ? <Auth /> : <Redirect to="/" />} */}
+            <Auth />
+          </Route>
+          <Route path="/discover">
+            {isAuthenticated ? <Auth /> : <Redirect to="/" />}
+          </Route>
+          <Route path="/create-playlist">
+            {isAuthenticated ? <Auth /> : <Redirect to="/" />}
+          </Route>
+          <Route path="/liked-songs">
+            {/* {isAuthenticated ? <Auth /> : <Redirect to="/" />} */}
+            <Auth />
+          </Route>
+          <Route path="/">
+            <Landing />
+          </Route>
+        </Switch>
+      </Router>
+      <Toaster position="bottom-right" />
+    </Container>
   );
-}
+};
 
 export default App;
