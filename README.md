@@ -1,46 +1,85 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Spotify Clone - Finale Project
 
-## Available Scripts
+My Finale Project assignment for #GenerasiGigih
 
-In the project directory, you can run:
+## Screenshots
 
-### `yarn start`
+![App Screenshot](.\public\images\readme.png)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Problem
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+`These are the problem that i meet`
+- How to make a mock API async call.
+- How to make a responsive website.
+- How to make a aesthetic UI.
+- How to use typescript properly and correctly.
 
-### `yarn test`
+`And the last but not least`
+- How to make our code are testable, extensible and maintainable.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Any additional information goes here
 
-### `yarn build`
+  ## Features
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+#### Main Features.
+- 🔐 Login with Spotify
+- 🔎 Search Songs
+- ➕ Creating Playlist
+#### Additional Features.
+- 👀 Profile Data
+- 🎶 New Releases Songs
+- 📔 Recommended Songs For You
+- ❤ Liked Songs
+- 💫 etc.
+  
+## Dependencies Used
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- [react-hot-toast](https://react-hot-toast.com) for some alert things.
+- [react-hook-form](https://react-hook-form.com) for handle form.
+- [chakra-ui](https://chakra-ui.com) for Styling.
+- [react-redux](https://react-redux.js.org) for state management.
+- [react-router-dom](https://reactrouter.com/web/guides/quick-start) for handle router.
+- [testing-library](https://testing-library.com) for testing.
+- write in [typescript](https://typescriptlang.org/).
+- [vercel](https://vercel.com) for deployment.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Environment Variables
 
-### `yarn eject`
+To run this project, you will need to add the following environment variables to your .env.local file
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+`REACT_APP_SPOTIFY_CLIENT_ID` your spotify developer client id.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+  
+## Run Locally
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Clone the project
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```bash
+  git clone https://github.com/ardihp/finale-project
+```
 
-## Learn More
+Go to the project directory
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```bash
+  cd finale-project
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Install dependencies
+
+```bash
+  yarn
+```
+
+Start the server
+
+```bash
+  yarn start
+```
+
+  
+## Feedback
+
+If you have any feedback, please reach out to us at [here](https://github.com/ardihp/finale-project/issues).
+
+  
