@@ -9,11 +9,7 @@ interface Props {
 
 const Track: React.FC<Props> = ({ images, name, artist_name }) => {
   const [isLoading, setLoading] = useState(true);
-  const artist = artist_name.map((a: any) => (
-    <Flex key={a.id} mr={2}>
-      {a.name}
-    </Flex>
-  ));
+  const artist = artist_name.map((a: any) => <span key={a.id}>{a.name}&nbsp;&nbsp;</span>);
 
   useEffect(() => {
     if (images !== "") {
@@ -44,7 +40,7 @@ const Track: React.FC<Props> = ({ images, name, artist_name }) => {
             fontSize="12px"
             color="#A6B1E1"
           >
-            <Flex>{artist}</Flex>
+            {artist}
           </Text>
         </Skeleton>
       </Flex>

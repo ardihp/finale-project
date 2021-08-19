@@ -11,9 +11,7 @@ interface Props {
 const Index: React.FC<Props> = ({ images, artist_name, name, uri }) => {
   const [isLoading, setLoading] = useState(true);
   const artist = artist_name.map((a: any) => (
-    <Flex key={a.id} mr={2}>
-      {a.name}
-    </Flex>
+    <span key={a.id}>{a.name}&nbsp;&nbsp;</span>
   ));
 
   useEffect(() => {
@@ -69,7 +67,7 @@ const Index: React.FC<Props> = ({ images, artist_name, name, uri }) => {
           title="Artists"
           isTruncated
         >
-          <Flex>{artist}</Flex>
+          {artist}
         </Text>
       </Skeleton>
     </>
