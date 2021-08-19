@@ -5,7 +5,7 @@ My Finale Project assignment for #GenerasiGigih
 
 ## Screenshots
 
-![App Screenshot](.\public\images\readme.png)
+![App Screenshot](https://github.com/ardihp/finale-project/blob/main/public/images/readme.png)
 
 ## Problem
 
