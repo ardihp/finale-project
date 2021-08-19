@@ -45,11 +45,15 @@ Any additional information goes here
 - [vercel](https://vercel.com) for deployment.
 - [MSW](https://mswjs.io) for Mock API async call.
 
-## Environment Variables
+## Setup Variables
 
 To run this project, you will need to add the following environment variables to your .env.local file
 
 `REACT_APP_SPOTIFY_CLIENT_ID` your spotify developer client id.
+
+You also need to change the `$Redirect_URI` on useAuth file
+
+  $Redirect_URI = "localhost:3000"
 
   
 ## Run Locally
