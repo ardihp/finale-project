@@ -43,6 +43,7 @@ Any additional information goes here
 - [testing-library](https://testing-library.com) for testing.
 - write in [typescript](https://typescriptlang.org/).
 - [vercel](https://vercel.com) for deployment.
+- [MSW](https://mswjs.io) for Mock API async call.
 
 ## Environment Variables
 
