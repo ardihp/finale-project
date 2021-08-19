@@ -29,7 +29,7 @@ const index = () => {
               <i className="fab fa-spotify"></i>
             </Box>
             <Text fontWeight="700" ml={2}>
-              SPOTIFY
+              SPORTIF
             </Text>
           </Flex>
         </Link>

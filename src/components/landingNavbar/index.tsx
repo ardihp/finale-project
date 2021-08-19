@@ -23,7 +23,7 @@ const index: React.FC<Props> = ({ handleLogin }) => {
             <Box mr={3}>
               <i className="fab fa-spotify"></i>
             </Box>
-            <Text>SPOTIFY</Text>
+            <Text>SPORTIF</Text>
           </Flex>
         </Link>
         <Box>
