@@ -42,8 +42,9 @@ const Index: React.FC = () => {
           _hover={{}}
           _focus={{}}
           {...register("query")}
+          data-testid="search-input"
         />
-        <Button background="#A6B1E1" color="white" type="submit">
+        <Button background="#A6B1E1" color="white" type="submit" data-testid="search-button">
           <i className="fas fa-search"></i>
         </Button>
       </Flex>

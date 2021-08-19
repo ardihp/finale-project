@@ -54,6 +54,7 @@ const Index: React.FC = () => {
             fontWeight="900"
             lineHeight="115%"
             color="#A6B1E1"
+            data-testid="heading1"
           >
             You bring the passion, we bring the music.
           </Text>
@@ -63,6 +64,7 @@ const Index: React.FC = () => {
             width="65%"
             mb="30px"
             mt="15px"
+            data-testid="heading2"
           >
             Get playlists and albums inspired by the artists and genres you're
             listening to. 3 months free, then{" "}
@@ -76,6 +78,7 @@ const Index: React.FC = () => {
             color="white"
             _hover={{ opacity: 0.8 }}
             onClick={() => handleLogin()}
+            data-testid="login-button"
           >
             <Text fontSize="18px" fontWeight="700" mr={3}>
               Get Started

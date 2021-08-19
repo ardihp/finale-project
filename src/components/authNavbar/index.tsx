@@ -34,6 +34,7 @@ const Index: React.FC<Props> = ({ comp }) => {
             color="white"
             ml={2}
             onClick={() => handleLogout()}
+            data-testid="logout-button"
           >
             <i className="fas fa-sign-out-alt"></i>
           </Button>

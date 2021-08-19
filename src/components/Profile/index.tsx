@@ -15,8 +15,15 @@ const Index: React.FC<Props> = ({ name, images }) => {
         mr={2}
         src={images}
         alt={name}
+        data-testid="profile_image"
       />
-      <Text color="white" fontFamily="Poppins" fontSize="14px" fontWeight="700">
+      <Text
+        color="white"
+        fontFamily="Poppins"
+        fontSize="14px"
+        fontWeight="700"
+        data-testid="profile_name"
+      >
         {name}
       </Text>
     </Flex>
