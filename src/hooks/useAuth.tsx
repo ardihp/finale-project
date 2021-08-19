@@ -22,7 +22,7 @@ const useAuth = () => {
   const handleLogin = () => {
     const Client_ID = process.env.REACT_APP_SPOTIFY_CLIENT_ID;
     const Response_Type = "token";
-    const Redirect_URI = "http://localhost:3000";
+    const Redirect_URI = "https://finale-project.vercel.app";
     const Scope = "playlist-modify-private user-library-read user-read-recently-played";
     window.location.href = `https://accounts.spotify.com/authorize?client_id=${Client_ID}&response_type=${Response_Type}&redirect_uri=${Redirect_URI}&scope=${Scope}&show_dialog=false`;
   };
