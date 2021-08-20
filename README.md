@@ -51,9 +51,9 @@ To run this project, you will need to add the following environment variables to
 
 `REACT_APP_SPOTIFY_CLIENT_ID` your spotify developer client id.
 
-You also need to change the `$Redirect_URI` on useAuth file if you want to run locally
+You also need to change the `Redirect_URI` on useAuth file if you want to run locally
 
-    $Redirect_URI = "localhost:3000"
+    Redirect_URI = "localhost:3000"
 
   
 ## Run Locally
